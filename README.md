@@ -13,10 +13,13 @@ This repository contains code for training and deploying a YOLOv8 object detecti
   - [3. Installing Python Dependencies](#3-installing-python-dependencies)
   - [4. Installing ROCm-Enabled PyTorch](#4-installing-rocm-enabled-pytorch)
 - [Running the Code](#running-the-code)
-  - [Training](#training)
+  - [4.1 Training the Model (YOLO)](#41-training-the-model-yolo)
   - [Inference on Video](#inference-on-video)
-    - [Standard Video Inference](#standard-video-inference)
+    - [Standard Inference](#standard-inference)
     - [Colored Bounding Boxes by Class](#colored-bounding-boxes-by-class)
+  - [4.2 Training the Model (CNN)](#42-training-the-model-cnn)
+  - [5. Run YOLO + CNN Inference](#5-run-yolo--cnn-inference)
+
 
 ## Overview
 
@@ -177,7 +180,7 @@ This section explains how to train a CNN classifier to work alongside YOLO for d
    After training, the best model weights will be saved as:
    best_dual_fighter.pth
    
-5. **Run YOLO + CNN Inference**
+## 5.Run YOLO + CNN Inference (This can be done without training first as repository already has pretrained .pth files)
 To run both YOLO detection and CNN classification on a video, use:
 ```bash
 python final_predict.py input_video.mp4 output_video.mp4 [conf_thresh]
