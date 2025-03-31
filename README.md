@@ -18,7 +18,8 @@ This repository contains code for training and deploying a YOLOv8 object detecti
     - [Standard Inference](#standard-inference)
     - [Colored Bounding Boxes by Class](#colored-bounding-boxes-by-class)
   - [4.2 Training the Model (CNN)](#42-training-the-model-cnn)
-  - [5. Run YOLO + CNN Inference](#5-run-yolo--cnn-inference)
+  - [5. Run YOLO + CNN Inference (This can be done without training first as repository already has pretrained .pth files)](#5-run-yolo--cnn-inference-this-can-be-done-without-training-first-as-repository-already-has-pretrained-pth-files)
+
 
 
 ## Overview
