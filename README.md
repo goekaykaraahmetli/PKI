@@ -49,5 +49,103 @@ This project demonstrates how to train and deploy a YOLOv8 object detection mode
 
 Ensure that ROCm is properly installed on your system. Verify that your GPU is recognized by running:
 
-```bash
 /opt/rocm/bin/rocminfo | grep 'Name'
+
+
+## 1. Create and Activate a Virtual Environment
+
+You can use either **venv** or **conda**.
+
+### Using `venv`:
+```bash
+python3 -m venv pytorch-rocm-env  
+source pytorch-rocm-env/bin/activate
+```
+
+### Using `conda`:
+```bash
+conda create -n pytorch-rocm-env python=3.10  
+conda activate pytorch-rocm-env
+```
+
+> After activation, your shell should show:  
+> `(pytorch-rocm-env)` at the beginning of the prompt.
+
+---
+
+## 2. Install Python Dependencies
+
+Upgrade pip and install required packages:
+```bash
+pip install --upgrade pip  
+pip install ultralytics opencv-python numpy==2.1.1
+```
+
+---
+
+## 3. Install ROCm-Enabled PyTorch
+
+First, remove any existing PyTorch packages:
+```bash
+pip uninstall torch torchvision torchaudio
+```
+
+Then install the ROCm version:
+```bash
+pip install --pre --force-reinstall --no-cache-dir torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/rocm6.3
+```
+
+### Verify the installation:
+```bash
+python -c "import torch; print('Version:', torch.__version__); print('torch.cuda.is_available():', torch.cuda.is_available()); print('Device count:', torch.cuda.device_count())"
+```
+
+You should see a version like `+rocm6.3` and a message showing that a GPU device is available.
+
+---
+
+## 4. Training the Model
+
+### Prepare your dataset
+
+Update the `data.yaml` file with paths to your training, validation, and test images.
+
+### Start training
+
+Run the training script:
+```bash
+python train_yolo.py
+```
+
+Model weights will be saved in:
+runs/detect/trainX/weights/best.pt
+
+
+---
+
+## 5. Inference on Video
+
+There are two scripts available for running inference on videos.
+
+### Standard Inference
+
+To annotate a video using your trained model:
+# ```bash
+python apply_model_to_video.py input_video.mp4 output_video.mp4 [conf_thresh]
+# ```
+
+- Replace `input_video.mp4` with your input file  
+- Replace `output_video.mp4` with the output filename  
+- `[conf_thresh]` is optional (default = `0.25`)
+
+### Colored Bounding Boxes by Class
+
+To draw boxes in specific colors for each class:
+# ```bash
+python video_detect_colored.py input_video.mp4 output_video.mp4 [conf_thresh]
+# ```
+
+- Blue boxes for **blue player**  
+- Red boxes for **red player**  
+- White boxes for **referee**  
+- Green (default) for any other class
