@@ -94,7 +94,7 @@ pip install --pre --force-reinstall --no-cache-dir torch torchvision torchaudio 
 
 ### Verify the installation:
 ```bash
-python -c "import torch; print('Version:', torch.__version__); print('torch.cuda.is_available():', torch.cuda.is_available()); print('Device count:', torch.cuda.device_count())"
+python testCuda.py
 ```
 
 You should see a version like `+rocm6.3` and a message showing that a GPU device is available.
