@@ -101,7 +101,7 @@ You should see a version like `+rocm6.3` and a message showing that a GPU device
 
 ---
 
-## 4. Training the Model
+## 4.1 Training the Model (YOLO)
 
 ### Prepare your dataset
 
@@ -120,7 +120,7 @@ runs/detect/trainX/weights/best.pt
 
 ---
 
-## 5. Inference on Video
+## Inference on Video
 
 There are two scripts available for running inference on videos.
 
@@ -128,7 +128,7 @@ There are two scripts available for running inference on videos.
 
 To annotate a video using your trained model:
 ```bash
-python apply_model_to_video.py input_video.mp4 output_video.mp4 [conf_thresh]
+python video_detect.py input_video.mp4 output_video.mp4 [conf_thresh]
 ```
 
 - Replace `input_video.mp4` with your input file  
@@ -146,3 +146,47 @@ python video_detect_colored.py input_video.mp4 output_video.mp4 [conf_thresh]
 - Red boxes for **red player**  
 - White boxes for **referee**  
 - Green (default) for any other class
+
+
+## 4.2 Training the Model (CNN)
+
+This section explains how to train a CNN classifier to work alongside YOLO for dual fighter classification.
+
+### Steps to Prepare and Train the Model
+
+1. **Download the Dataset**  
+   - Get the Olympic Boxing dataset and extract it into the folder:  
+     ```
+     /DatasetPreperation
+     ```
+
+2. **Run Preprocessing Scripts**  
+   These scripts will extract frames, detect fighters, and prepare the dataset:
+   ```bash
+   python extract_and_detect.py  
+   python create_dataset.py  
+   python split_dataset_TrainTestVal.py
+   ```
+
+3. **Train the CNN Classifier**  
+   Train the model using:
+   ```bash
+   python train_dual_fighters.py
+   ```
+
+   After training, the best model weights will be saved as:
+   best_dual_fighter.pth
+   
+5. **Run YOLO + CNN Inference**
+To run both YOLO detection and CNN classification on a video, use:
+```bash
+python final_predict.py input_video.mp4 output_video.mp4 [conf_thresh]
+```
+
+- Replace `input_video.mp4` with your input video  
+- Replace `output_video.mp4` with your desired output filename  
+- `[conf_thresh]` is optional (default is 0.25)
+
+> Note: This script is located in the `/pipeline` directory and combines YOLO detection with CNN-based class predictions for each detected fighter.
+
+---
