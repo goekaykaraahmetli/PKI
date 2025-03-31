@@ -25,7 +25,7 @@ This project demonstrates how to train and deploy a YOLOv8 object detection mode
 ## Prerequisites
 
 - **Operating System:** Linux (Dual-boot recommended for native GPU support)
-- **GPU:** AMD RX 7900 XT
+- **GPU:** AMD GPU with ROCm Support (or NVIDIA GPU should also work)
 - **ROCm:** Version 6.3.3 (or compatible; see [ROCm Installation Guide](https://rocmdocs.amd.com/en/latest/Installation_Guide/Installation-Guide.html))
 - **Python:** Version 3.10 (recommended for compatibility with ROCm-enabled builds)
 - **Virtual Environment:** Either `conda` or Python `venv`
