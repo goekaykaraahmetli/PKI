@@ -17,9 +17,6 @@ This repository contains code for training and deploying a YOLOv8 object detecti
   - [Inference on Video](#inference-on-video)
     - [Standard Video Inference](#standard-video-inference)
     - [Colored Bounding Boxes by Class](#colored-bounding-boxes-by-class)
-- [Challenges](#challenges)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
