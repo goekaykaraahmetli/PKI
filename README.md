@@ -130,9 +130,9 @@ There are two scripts available for running inference on videos.
 ### Standard Inference
 
 To annotate a video using your trained model:
-# ```bash
+```bash
 python apply_model_to_video.py input_video.mp4 output_video.mp4 [conf_thresh]
-# ```
+```
 
 - Replace `input_video.mp4` with your input file  
 - Replace `output_video.mp4` with the output filename  
@@ -141,9 +141,9 @@ python apply_model_to_video.py input_video.mp4 output_video.mp4 [conf_thresh]
 ### Colored Bounding Boxes by Class
 
 To draw boxes in specific colors for each class:
-# ```bash
+```bash
 python video_detect_colored.py input_video.mp4 output_video.mp4 [conf_thresh]
-# ```
+```
 
 - Blue boxes for **blue player**  
 - Red boxes for **red player**  
