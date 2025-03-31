@@ -92,7 +92,7 @@ Then install the ROCm version:
 pip install --pre --force-reinstall --no-cache-dir torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/rocm6.3
 ```
 
-### Verify the installation:
+### Verify the installation (DatasetPreperation Folder):
 ```bash
 python testCuda.py
 ```
@@ -109,9 +109,9 @@ Update the `data.yaml` file with paths to your training, validation, and test im
 
 ### Start training
 
-Run the training script:
+Run the training script in /pipeline:
 ```bash
-python train_yolo.py
+python train.py
 ```
 
 Model weights will be saved in:
