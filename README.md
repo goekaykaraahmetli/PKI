@@ -181,7 +181,7 @@ This section explains how to train a CNN classifier to work alongside YOLO for d
    After training, the best model weights will be saved as:
    best_dual_fighter.pth
    
-## 5.Run YOLO + CNN Inference (This can be done without training first as repository already has pretrained .pth files)
+## 5. Run YOLO + CNN Inference (This can be done without training first as repository already has pretrained .pth files)
 To run both YOLO detection and CNN classification on a video, use:
 ```bash
 python final_predict.py input_video.mp4 output_video.mp4 [conf_thresh]
