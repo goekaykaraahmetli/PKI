@@ -88,6 +88,8 @@ python train.py
 Model weights will be saved in:
 runs/detect/trainX/weights/best.pt
 
+X in trainX represents the most recent run (so train5 for instance)
+
 
 ---
 
@@ -124,20 +126,22 @@ This section explains how to train a CNN classifier to work alongside YOLO for d
 ### Steps to Prepare and Train the Model
 
 1. **Download the Dataset**  
-   - Get the Olympic Boxing dataset and extract it into the folder:  
-     ```
-     /DatasetPreperation
+   - Get the Olympic Boxing dataset and extract it into the folder /DatasetPreperation:
+   - Inside of /DatasetPreperation, execute this command: 
+     ```bash
+     gdown 
      ```
 
 2. **Run Preprocessing Scripts**  
-   These scripts will extract frames, detect fighters, and prepare the dataset:
+   These scripts will extract frames, detect fighters, and prepare the dataset (This step will take a while):
+   - Note: If you want to use the model that was trained in 4.1, change the MODEL_PATH in extract_and_detect.py to the newest best.pt in Line 8. Changing the number of trainX should suffice (you can skip this step though)
    ```bash
    python extract_and_detect.py  
    python create_dataset.py  
    python split_dataset_TrainTestVal.py
    ```
 
-3. **Train the CNN Classifier**  
+4. **Train the CNN Classifier**  
    Train the model using:
    ```bash
    python train_dual_fighters.py
