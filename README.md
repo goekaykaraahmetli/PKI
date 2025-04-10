@@ -1,3 +1,4 @@
+
 # YOLOv8 on AMD ROCm
 
 This repository contains code for training and deploying a YOLOv8 object detection model using an AMD RX 7900 XT GPU with ROCm 6.3.3. The project includes scripts for training the model as well as for running inference on videos, including options to display class-specific colored bounding boxes.
@@ -10,15 +11,11 @@ This repository contains code for training and deploying a YOLOv8 object detecti
 - **Python:** Version 3.10 (recommended for compatibility with ROCm-enabled builds)
 - **Virtual Environment:** Either `conda` or Python `venv`
 
-## Required Libraries and Versions
+## Required Libraries
 
-- **PyTorch:** ROCm-enabled build (e.g., version 2.6.0+rocm6.3 or similar)
-- **torchvision:** ROCm-enabled version corresponding to your PyTorch build
-- **torchaudio:** ROCm-enabled version
-- **Ultralytics YOLO:** Version 8.3.91 (installed via pip)
-- **OpenCV:** `opencv-python` (version 4.x)
-- **numpy:** Version ≤ 2.1.1 (to satisfy Ultralytics YOLO dependency)
-- Additional dependencies (installed via pip): filelock, fsspec, jinja2, networkx, etc.
+- Install dependencies based on your hardware:
+  - For **AMD GPUs (ROCm)**: use `requirementsAMD.txt`
+  - For **NVIDIA GPUs**: use `requirementsNVIDIA.txt`
 
 ## Installation
 
@@ -26,9 +23,9 @@ This repository contains code for training and deploying a YOLOv8 object detecti
 
 Ensure that ROCm is properly installed on your system. Verify that your GPU is recognized by running:
 
+```bash
 /opt/rocm/bin/rocminfo | grep 'Name'
-
-
+```
 ## 1. Create and Activate a Virtual Environment
 
 You can use either **venv** or **conda**.
@@ -52,30 +49,25 @@ conda activate pytorch-rocm-env
 
 ## 2. Install Python Dependencies
 
-Upgrade pip and install required packages:
-```bash
-pip install --upgrade pip  
-pip install ultralytics opencv-python numpy==2.1.1
-```
+Upgrade pip and install the required packages for your GPU.
 
+### For AMD (ROCm):
+```bash
+pip install --upgrade pip
+pip install -r requirementsAMD.txt
+```
+### For NVIDIA:
+```bash
+pip install --upgrade pip
+pip install -r requirementsNVIDIA.txt
+```
 ---
-
-## 3. Install ROCm-Enabled PyTorch
-
-First, remove any existing PyTorch packages:
-```bash
-pip uninstall torch torchvision torchaudio
-```
-
-Then install the ROCm version:
-```bash
-pip install --pre --force-reinstall --no-cache-dir torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/rocm6.3
-```
 
 ### Verify the installation (DatasetPreperation Folder):
 ```bash
 python testCuda.py
 ```
+### For AMD:
 
 You should see a version like `+rocm6.3` and a message showing that a GPU device is available.
 
