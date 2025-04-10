@@ -2,30 +2,6 @@
 
 This repository contains code for training and deploying a YOLOv8 object detection model using an AMD RX 7900 XT GPU with ROCm 6.3.3. The project includes scripts for training the model as well as for running inference on videos, including options to display class-specific colored bounding boxes.
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Prerequisites](#prerequisites)
-- [Required Libraries and Versions](#required-libraries-and-versions)
-- [Installation](#installation)
-  - [1. ROCm 6.3.3 Installation](#1-rocm-633-installation)
-  - [2. Creating and Activating a Virtual Environment](#2-creating-and-activating-a-virtual-environment)
-  - [3. Installing Python Dependencies](#3-installing-python-dependencies)
-  - [4. Installing ROCm-Enabled PyTorch](#4-installing-rocm-enabled-pytorch)
-- [Running the Code](#running-the-code)
-  - [4.1 Training the Model (YOLO)](#41-training-the-model-yolo)
-  - [Inference on Video](#inference-on-video)
-    - [Standard Inference](#standard-inference)
-    - [Colored Bounding Boxes by Class](#colored-bounding-boxes-by-class)
-  - [4.2 Training the Model (CNN)](#42-training-the-model-cnn)
-  - [5. Run YOLO + CNN Inference (This can be done without training first as repository already has pretrained .pth files)](#5-run-yolo--cnn-inference-this-can-be-done-without-training-first-as-repository-already-has-pretrained-pth-files)
-
-
-
-## Overview
-
-This project demonstrates how to train and deploy a YOLOv8 object detection model using an AMD RX 7900 XT GPU under ROCm on Linux. Due to limitations with ROCm support on Windows, the project was eventually run natively on Linux (dual-boot) to fully leverage GPU acceleration.
-
 ## Prerequisites
 
 - **Operating System:** Linux (Dual-boot recommended for native GPU support)
