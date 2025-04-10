@@ -1,0 +1,13 @@
+train: /train/images
+val: /valid/images
+test: /test/images
+
+nc: 3
+names: ['blue-player', 'red-player', 'referee']
+
+roboflow:
+  workspace: boxing-game-detection
+  project: boxing-player-detection
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/boxing-game-detection/boxing-player-detection/dataset/1
