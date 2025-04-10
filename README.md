@@ -152,12 +152,11 @@ This section explains how to train a CNN classifier to work alongside YOLO for d
 ## 5. Run YOLO + CNN Inference (This can be done without training first as repository already has pretrained .pth files)
 To run both YOLO detection and CNN classification on a video, use:
 ```bash
-python final_predict.py input_video.mp4 output_video.mp4 [conf_thresh]
+python final_predict.py input_video.mp4 output_video.mp4
 ```
 
 - Replace `input_video.mp4` with your input video  
 - Replace `output_video.mp4` with your desired output filename  
-- `[conf_thresh]` is optional (default is 0.25)
 
 > Note: This script is located in the `/pipeline` directory and combines YOLO detection with CNN-based class predictions for each detected fighter.
 
