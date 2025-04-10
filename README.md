@@ -73,7 +73,9 @@ You should see a version like `+rocm6.3` and a message showing that a GPU device
 
 ---
 
-## 4.1 Training the Model (YOLO) (You can Skip Step 4.1 and 4.2 and go straight to Point 5 if you don't want to train from scratch, as weights are already present in this repository)
+## 4.1 Training the Model (YOLO) 
+
+### (You can Skip Step 4.1 and 4.2 and go straight to Point 5 if you don't want to train from scratch, as weights are already present in this repository)
 
 ### Prepare your dataset
 
@@ -100,18 +102,17 @@ There are two scripts available for running inference on videos.
 
 To annotate a video using your trained model:
 ```bash
-python video_detect.py input_video.mp4 output_video.mp4 [conf_thresh]
+python video_detect.py input_video.mp4 output_video.mp4
 ```
 
 - Replace `input_video.mp4` with your input file  
 - Replace `output_video.mp4` with the output filename  
-- `[conf_thresh]` is optional (default = `0.25`)
 
 ### Colored Bounding Boxes by Class
 
 To draw boxes in specific colors for each class:
 ```bash
-python video_detect_colored.py input_video.mp4 output_video.mp4 [conf_thresh]
+python video_detect_colored.py input_video.mp4 output_video.mp4
 ```
 
 - Blue boxes for **blue player**  
