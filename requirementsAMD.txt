@@ -1,0 +1,7 @@
+--extra-index-url https://download.pytorch.org/whl/rocm6.3
+ultralytics==8.3.91
+opencv-python>=4.6.0.66
+numpy==2.1.1
+torch==2.6.0+rocm6.3
+torchvision==0.21.0+rocm6.3
+torchaudio==2.6.0+rocm6.3
