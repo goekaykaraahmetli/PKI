@@ -77,10 +77,6 @@ You should see a version like `+rocm6.3` and a message showing that a GPU device
 
 ### (You can Skip Step 4.1 and 4.2 and go straight to Point 5 if you don't want to train from scratch, as weights are already present in this repository)
 
-### Prepare your dataset
-
-Update the `data.yaml` file with paths to your training, validation, and test images.
-
 ### Start training
 
 Run the training script in /pipeline:
