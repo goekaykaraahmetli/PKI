@@ -63,8 +63,9 @@ pip install -r requirementsNVIDIA.txt
 ```
 ---
 
-### Verify the installation (DatasetPreperation Folder):
+### Verify the installation:
 ```bash
+cd DatasetPreperation
 python testCuda.py
 ```
 ### For AMD:
@@ -114,7 +115,6 @@ python video_detect_colored.py input_video.mp4 output_video.mp4
 - Blue boxes for **blue player**  
 - Red boxes for **red player**  
 - White boxes for **referee**  
-- Green (default) for any other class
 
 
 ## 4.2 Training the Model (CNN)
