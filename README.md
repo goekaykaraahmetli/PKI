@@ -19,7 +19,7 @@ This repository contains code for training and deploying a YOLOv8 object detecti
 
 ## Installation
 
-### 1. ROCm 6.3.3 Installation
+### 1. ROCm 6.3.3 Installation (FOR AMD)
 
 Ensure that ROCm is properly installed on your system. Verify that your GPU is recognized by running:
 
