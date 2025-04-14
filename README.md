@@ -133,7 +133,7 @@ This section explains how to train a CNN classifier to work alongside YOLO for d
    - Get the Olympic Boxing dataset and extract it into the folder /DatasetPreperation:
    - Inside of /DatasetPreperation, execute this command: 
      ```bash
-     gdown 
+     gdown 1NjWzdIJsWpokvINMXtz4Huh1gOTXHJST
      ```
 
 2. **Run Preprocessing Scripts**  
