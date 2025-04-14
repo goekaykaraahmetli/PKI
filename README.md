@@ -28,11 +28,15 @@ Ensure that ROCm is properly installed on your system. Verify that your GPU is r
 ```
 ## 1. Create and Activate a Virtual Environment
 
-You can use either **venv** or **conda**.
+You can use either **venv** or **conda**. Make sure to use Python 3.10
+
+```bash
+sudo apt install python3.10 python3.10-venv -y
+```
 
 ### Using `venv`:
 ```bash
-python3 -m venv pytorch-rocm-env  
+python3.10 -m venv pytorch-rocm-env
 source pytorch-rocm-env/bin/activate
 ```
 
