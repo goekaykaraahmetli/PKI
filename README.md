@@ -58,13 +58,13 @@ Upgrade pip and install the required packages for your GPU.
 ### For AMD (ROCm):
 ```bash
 pip install --upgrade pip
-pip install --no-cache-dir --pre -r requirementsAMD.txt \
+pip install --no-cache-dir --pre -r requirements.txt \
   --extra-index-url https://download.pytorch.org/whl/nightly/rocm6.3/
 ```
 ### For NVIDIA:
 ```bash
 pip install --upgrade pip
-pip install -r requirementsNVIDIA.txt
+pip install -r requirements.txt
 ```
 ---
 
