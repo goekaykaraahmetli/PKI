@@ -134,6 +134,8 @@ This section explains how to train a CNN classifier to work alongside YOLO for d
    - Inside of /DatasetPreperation, execute this command: 
      ```bash
      gdown 1NjWzdIJsWpokvINMXtz4Huh1gOTXHJST
+     unzip dataset.zip
+     mv "Olympic Boxing Punch Classification Video Dataset" dataset
      ```
 
 2. **Run Preprocessing Scripts**  
